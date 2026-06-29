@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Dashboard</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+<div class="dashboard">
+
+    <aside class="sidebar">
+
+        <h2>🔒 Secure Login</h2>
+
+        <ul>
+
+            <li>Dashboard</li>
+
+            <li>Profile</li>
+
+            <li>Settings</li>
+
+            <li>Logout</li>
+
+        </ul>
+
+    </aside>
+
+    <main class="content">
+
+        <div class="welcome-card">
+
+            <h1>
+
+                Welcome {{ username}} 👋
+
+            </h1>
+
+            <p>
+
+                You have successfully logged in.
+
+            </p>
+
+        </div>
+
+        <div class="cards">
+
+            <div class="card">
+
+                <h3>Profile</h3>
+
+                <p><strong>Username:</strong> {{ username }}</p>
+                <p><strong>Email:</strong> {{ email }}</p>
+
+            </div>
+
+            <div class="card">
+
+                <h3>Security</h3>
+
+                <p>Password Encrypted ✔</p>
+
+                <p>Firebase Connected ✔</p>
+
+            </div>
+
+            <div class="card">
+
+                <h3>Status</h3>
+
+                <p>Logged In</p>
+
+                <p>Session Active</p>
+
+            </div>
+
+        </div>
+
+        <a href="{{ url_for('logout') }}">
+        <button type="button" class="logout-btn">
+            Logout
+        </button>
+        </a>
+
+    </main>
+
+</div>
+
+</body>
+
+</html>

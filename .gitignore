@@ -1,0 +1,7 @@
+# Local config (contains credentials) - do not commit
+config.py
+firebase_api.json
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]

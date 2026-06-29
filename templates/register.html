@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Create Account</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="login-card">
+
+            <div class="logo">
+                👤
+            </div>
+
+            <h1>Create Account</h1>
+
+            <p class="subtitle">
+                Register to continue.
+            </p>
+
+            {% if error %}
+            <p style="color:red; text-align:center;">
+                {{ error }}
+            </p>
+            {% endif %}
+
+            <form action="{{ url_for('register') }}" method="POST">
+
+                <div class="input-group">
+
+                    <label>Username</label>
+
+                    <input
+                    type="text"
+                    name="username"
+                    placeholder="Enter Username">
+
+                </div>
+
+                <div class="input-group">
+
+                    <label>Email</label>
+
+                    <input
+                    type="email"
+                    name="email"
+                    placeholder="Enter Email">
+
+                </div>
+
+                <div class="input-group">
+
+                    <label>Password</label>
+
+                    <input
+                    type="password"
+                    name="password"
+                    placeholder="Enter Password">
+
+                </div>
+
+                <div class="input-group">
+
+                    <label>Confirm Password</label>
+
+                    <input
+                    type="password"
+                    name="confirm_password"
+                    placeholder="Confirm Password">
+
+                </div>
+
+                <button type="submit" class="btn-login">
+
+                    Register
+
+                </button>
+
+            </form>
+
+            <div class="bottom-links">
+
+                <p>
+
+                    Already have an account?
+
+                    <a href="{{ url_for('login') }}">
+
+                        Login
+
+                    </a>
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>
